@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+<header>
+    <h1>Sobre Nosotros</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="elaboracion.html">Elaboración</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<section class="hero">
+    <h2>Nuestra historia</h2>
+    <p>Hecho a mano, hecho con corazón ♡</p>
+</section>
+
+<section class="productos-destacados" style="max-width:800px; margin:auto; text-align:center;">
+
+<p>
+Todo comenzó como una tradición familiar, donde cada pieza era creada con paciencia, creatividad y dedicación.
+Desde pequeños aprendimos que las artesanías no solo son objetos, sino recuerdos, emociones y momentos que se quedan para siempre.
+</p>
+
+<br>
+
+<p>
+Nos especializamos en la creación de <strong>piñatas artesanales</strong>, llenas de color y alegría, perfectas para celebrar momentos especiales.
+Cada diseño es único, hecho a mano y pensado para transmitir felicidad.
+</p>
+
+<br>
+
+<p>
+También elaboramos <strong>velas aromáticas</strong>, creadas para brindar calma, armonía y un ambiente especial en cada espacio.
+Sus aromas están pensados para acompañar tus momentos más importantes.
+</p>
+
+<br>
+
+<p>
+Además, diseñamos <strong>portarretratos artesanales</strong>, ideales para guardar tus recuerdos más valiosos.
+Cada pieza busca resaltar la importancia de los momentos que quieres conservar.
+</p>
+
+<br>
+
+<p>
+Hoy seguimos trabajando con la misma pasión, cuidando cada detalle y utilizando materiales seleccionados,
+con el objetivo de ofrecer productos únicos que conecten contigo.
+</p>
+
+<br>
+
+<p><strong>Gracias por ser parte de nuestra historia.</strong></p>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Artesanías Chamito</p>
+</footer>
+
+</div>
+
+<div class="musica-fija">
+    <audio id="musica" controls>
+        <source src="audio/lease.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+const musica = document.getElementById("musica");
+
+// Recuperar tiempo guardado
+window.addEventListener("load", () => {
+    const tiempo = localStorage.getItem("tiempoMusica");
+    if (tiempo) {
+        musica.currentTime = tiempo;
+    }
+});
+
+// Guardar tiempo cuando cambias de página
+window.addEventListener("beforeunload", () => {
+    localStorage.setItem("tiempoMusica", musica.currentTime);
+});
+</script>
+
+</body>
+</html>

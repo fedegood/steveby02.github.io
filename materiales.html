@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <title>Materiales</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+<header>
+    <h1>Materiales</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="elaboracion.html">Elaboración</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<section class="hero">
+    <h2>Nuestros Materiales</h2>
+    <p>Seleccionados cuidadosamente y especiales para ti.</p>
+</section>
+
+<section class="productos-destacados">
+    <div class="productos-grid">
+
+        <div class="producto-card">
+            <h4>Madera Roble</h4>
+            <p>Material resistente y natural</p>
+        </div>
+
+        <div class="producto-card">
+            <h4>Pinturas</h4>
+            <p>Colores duraderos y de calidad</p>
+        </div>
+
+        <div class="producto-card">
+            <h4>Tela</h4>
+            <p>Textiles suaves y decorativos</p>
+        </div>
+
+
+        <div class="producto-card">
+            <h4>Papel Crepe</h4>
+            <p>Papel suave y flexible que permite crear volumen y textura</p>
+        </div>
+
+
+        <div class="producto-card">
+            <h4>Botella</h4>
+            <p>Plastico Reutilizable y Duradero</p>
+        </div>
+
+
+        <div class="producto-card">
+            <h4>Hilo o cuerda</h4>
+            <p>Sirve para dar soporte y permitir que las piñatas se sostengan o cuelguen.</p>
+        </div>
+
+        <div class="producto-card">
+            <h4>Pegamento o silicón</h4>
+            <p>Permite fijar los materiales de forma firme, especialmente papel y cartón.</p>
+        </div>
+        <div class="producto-card">
+            <h4>Cartón</h4>
+            <p>Es ligero pero resistente, ideal para dar forma a las figuras sin que pesen mucho.</p>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Artesanías Chamito</p>
+</footer>
+
+</div>
+
+<div class="musica-fija">
+    <audio id="musica" controls>
+        <source src="audio/lease.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+const musica = document.getElementById("musica");
+
+// Recuperar tiempo guardado
+window.addEventListener("load", () => {
+    const tiempo = localStorage.getItem("tiempoMusica");
+    if (tiempo) {
+        musica.currentTime = tiempo;
+    }
+});
+
+// Guardar tiempo cuando cambias de página
+window.addEventListener("beforeunload", () => {
+    localStorage.setItem("tiempoMusica", musica.currentTime);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+<header>
+    <h1>Contacto</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="elaboracion.html">Elaboración</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="hero">
+        <h2>Contáctanos</h2>
+        <p>Estamos para ayudarte (´▽`ʃ♡ƪ)</p>
+    </section>
+
+    <!-- REDES SOCIALES SIMPLES -->
+    <section class="productos-destacados" style="text-align:center;">
+        <p>
+            📸 <a href="https://www.instagram.com/stev3by_2002" target="_blank">Instagram</a> <br><br>
+            📘 <a href="https://www.facebook.com/Fede Chico" target="_blank">Facebook</a> <br><br>
+            💬 <a href="https://wa.me/5638399829" target="_blank">WhatsApp</a>
+        </p>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Artesanías Chamito</p>
+</footer>
+
+</div>
+
+<div class="musica-fija">
+    <audio id="musica" controls>
+        <source src="audio/lease.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+const musica = document.getElementById("musica");
+
+// Recuperar tiempo guardado
+window.addEventListener("load", () => {
+    const tiempo = localStorage.getItem("tiempoMusica");
+    if (tiempo) {
+        musica.currentTime = tiempo;
+    }
+});
+
+// Guardar tiempo cuando cambias de página
+window.addEventListener("beforeunload", () => {
+    localStorage.setItem("tiempoMusica", musica.currentTime);
+});
+</script>
+
+</body>
+</html>

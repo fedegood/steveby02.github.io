@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <title>Elaboración</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+<header>
+    <h1>Elaboración</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="elaboracion.html">Elaboración</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <section class="hero">
+        <h2>Proceso Artesanal</h2>
+        <p>Cada pieza es hecha a mano con dedicación （￣︶￣）</p>
+    </section>
+
+    <section class="productos-destacados">
+        <div class="productos-grid">
+
+            <!-- PIÑATAS -->
+            <div class="producto-card">
+                <h4>Piñatas</h4>
+                <p>
+                Elaboramos nuestras piñatas utilizando cartón como base, al que damos forma según el diseño.
+                Después las cubrimos con papel y decoramos con papel crepé de colores para darles volumen y vida.
+                </p>
+            </div>
+
+            <!-- PORTARRETRATOS -->
+            <div class="producto-card">
+                <h4>Portarretratos</h4>
+                <p>
+                Nuestros portarretratos se crean con madera o cartón resistente. Se lijan, pintan y decoran
+                cuidadosamente para lograr piezas únicas y duraderas.
+                </p>
+            </div>
+
+            <!-- VELAS -->
+            <div class="producto-card">
+                <h4>Velas aromáticas</h4>
+                <p>
+                Las velas se elaboran derritiendo cera, añadiendo fragancias y colocándolas en moldes.
+                Se dejan enfriar hasta obtener un producto con aroma agradable y acabado perfecto.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Artesanías Chamito</p>
+</footer>
+
+</div>
+
+<div class="musica-fija">
+    <audio id="musica" controls>
+        <source src="audio/lease.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+const musica = document.getElementById("musica");
+
+// Recuperar tiempo guardado
+window.addEventListener("load", () => {
+    const tiempo = localStorage.getItem("tiempoMusica");
+    if (tiempo) {
+        musica.currentTime = tiempo;
+    }
+});
+
+// Guardar tiempo cuando cambias de página
+window.addEventListener("beforeunload", () => {
+    localStorage.setItem("tiempoMusica", musica.currentTime);
+});
+</script>
+
+</body>
+</html>

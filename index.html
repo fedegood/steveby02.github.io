@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <title>Artesanías Chamito</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<div class="contenedor">
+
+<header>
+    <h1>Artesanías Don Chamito</h1>
+    <p>Chamito sabe lo que hace</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="elaboracion.html">Elaboración</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h2>Artesanías únicas</h2>
+        <p>Hechas con sangre, sudor y lágrimas :'v</p>
+
+        <div class="botones">
+            <a href="ubicacion.html" class="btn">Ubicación</a>
+            <a href="nosotros.html" class="btn">Sobre Nosotros</a>
+            <a href="materiales.html" class="btn">Materiales</a>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="productos-destacados">
+        <h3>PRODUCTOS DESTACADOS</h3>
+
+        <div class="productos-grid">
+
+            <div class="producto-card">
+                <img src="imagenes/tarros.jpg" alt="">
+                <h4>Vela Olor Frambuesa</h4>
+                <p>$120 MXN</p>
+            </div>
+
+            <div class="producto-card">
+                <img src="imagenes/bela.jpg" alt="">
+                <h4>Vela Olor Manzanilla</h4>
+                <p>$150 MXN</p>
+            </div>
+
+            <div class="producto-card">
+                <img src="imagenes/vela.jpg" alt="">
+                <h4>Vela Olor Naranja</h4>
+                <p>$130 MXN</p>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- ASIDE FUERA DE MAIN (como antes pero limpio) -->
+<aside>
+    <h3>PROMOCIÓN</h3>
+    <p>2 Velas por solo $200 MXN</p>
+    <p>(Solo tienes que seguirnos en nuestras redes)</p>
+</aside>
+
+<footer>
+    <p>© 2026 Artesanías Chamito</p>
+    <p>Facebook | Instagram | WhatsApp</p>
+</footer>
+
+</div>
+
+
+<div class="musica-fija">
+    <audio id="musica" controls>
+        <source src="audio/lease.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+const musica = document.getElementById("musica");
+
+// Recuperar tiempo guardado
+window.addEventListener("load", () => {
+    const tiempo = localStorage.getItem("tiempoMusica");
+    if (tiempo) {
+        musica.currentTime = tiempo;
+    }
+});
+
+// Guardar tiempo cuando cambias de página
+window.addEventListener("beforeunload", () => {
+    localStorage.setItem("tiempoMusica", musica.currentTime);
+});
+</script>
+
+</body>
+</html>
