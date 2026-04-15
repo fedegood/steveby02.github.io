@@ -175,3 +175,66 @@ footer {
 .musica-fija audio {
     width: 200px;
 }
+
+/* GRID PRINCIPAL */
+.contenedor {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+}
+
+header { grid-area: header; }
+nav { grid-area: nav; }
+main { grid-area: main; }
+aside { grid-area: aside; }
+footer { grid-area: footer; }
+
+/* MENÚ HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        display: none;
+        text-align: center;
+    }
+
+    nav ul.activo {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        padding: 0.8rem;
+    }
+}
