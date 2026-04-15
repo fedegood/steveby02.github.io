@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="estilos.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ -->
     <title>Contacto</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
@@ -15,7 +15,10 @@
 </header>
 
 <nav>
-    <ul>
+    <!-- 🍔 MENÚ HAMBURGUESA -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="elaboracion.html">Elaboración</a></li>
@@ -29,11 +32,11 @@
         <p>Estamos para ayudarte (´▽`ʃ♡ƪ)</p>
     </section>
 
-    <!-- REDES SOCIALES SIMPLES -->
+    <!-- REDES SOCIALES -->
     <section class="productos-destacados" style="text-align:center;">
         <p>
             📸 <a href="https://www.instagram.com/stev3by_2002" target="_blank">Instagram</a> <br><br>
-            📘 <a href="https://www.facebook.com/Fede Chico" target="_blank">Facebook</a> <br><br>
+            📘 <a href="https://www.facebook.com/federico.perezmayen" target="_blank">Facebook</a> <br><br>
             💬 <a href="https://wa.me/5638399829" target="_blank">WhatsApp</a>
         </p>
     </section>
@@ -45,16 +48,17 @@
 
 </div>
 
+<!-- 🎵 MÚSICA -->
 <div class="musica-fija">
     <audio id="musica" controls>
         <source src="audio/lease.mp3" type="audio/mpeg">
     </audio>
 </div>
 
+<!-- SCRIPT MÚSICA -->
 <script>
 const musica = document.getElementById("musica");
 
-// Recuperar tiempo guardado
 window.addEventListener("load", () => {
     const tiempo = localStorage.getItem("tiempoMusica");
     if (tiempo) {
@@ -62,10 +66,17 @@ window.addEventListener("load", () => {
     }
 });
 
-// Guardar tiempo cuando cambias de página
 window.addEventListener("beforeunload", () => {
     localStorage.setItem("tiempoMusica", musica.currentTime);
 });
+</script>
+
+<!-- SCRIPT MENÚ -->
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("activo");
+}
 </script>
 
 </body>
