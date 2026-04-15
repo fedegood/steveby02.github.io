@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="estilos.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ -->
     <title>Productos</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
@@ -15,7 +15,10 @@
 </header>
 
 <nav>
-    <ul>
+    <!-- 🍔 MENÚ HAMBURGUESA -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="elaboracion.html">Elaboración</a></li>
@@ -24,63 +27,66 @@
 </nav>
 
 <main>
+
     <section class="hero">
         <h2>Nuestras Artesanías</h2>
         <p>Piezas únicas hechas a mano \^o^/</p>
     </section>
 
     <section class="productos-destacados">
-            <div class="productos-grid">
-                <div class="producto-card">
-                    <img src="imagenes/bonito.jpg" alt="">
-                    <h4>Marco Compartido</h4>
-                    <p>$120 MXN</p>
-                </div>
+        <div class="productos-grid">
 
-                <div class="producto-card">
-                    <img src="imagenes/niño.jpg" alt="">
-                    <h4>Marco Con Colores</h4>
-                    <p>$110 MXN</p>
-                </div>
+            <div class="producto-card">
+                <img src="imagenes/bonito.jpg" alt="">
+                <h4>Marco Compartido</h4>
+                <p>$120 MXN</p>
+            </div>
 
-                <div class="producto-card">
-                    <img src="imagenes/conchas.jpg" alt="">
-                    <h4>Marco Marino</h4>
-                    <p>$150 MXN</p>
-                </div>
+            <div class="producto-card">
+                <img src="imagenes/niño.jpg" alt="">
+                <h4>Marco Con Colores</h4>
+                <p>$110 MXN</p>
+            </div>
 
-                <div class="producto-card">
-                    <img src="imagenes/gato2.jpg" alt="">
-                    <h4>Marco de Gato</h4>
-                    <p>$135 MXN</p>
-                </div>
+            <div class="producto-card">
+                <img src="imagenes/conchas.jpg" alt="">
+                <h4>Marco Marino</h4>
+                <p>$150 MXN</p>
+            </div>
 
-                <div class="producto-card">
-                    <img src="imagenes/skibidi.jpg" alt="">
-                    <h4>Piñata Dob Dob Dob Yes Yes</h4>
-                    <p>$300 MXN</p>
-                </div>
+            <div class="producto-card">
+                <img src="imagenes/gato2.jpg" alt="">
+                <h4>Marco de Gato</h4>
+                <p>$135 MXN</p>
+            </div>
 
-                <div class="producto-card">
-                    <img src="imagenes/gato.jpg" alt="">
-                    <h4>Piñata Cheshire</h4>
-                    <p>$200 MXN</p>
-                </div>
+            <div class="producto-card">
+                <img src="imagenes/skibidi.jpg" alt="">
+                <h4>Piñata Dob Dob Dob Yes Yes</h4>
+                <p>$300 MXN</p>
+            </div>
 
-                <div class="producto-card">
-                    <img src="imagenes/carton.jpg" alt="">
-                    <h4>Piñata Clasica</h4>
-                    <p>$190 MXN</p>
-                </div>
+            <div class="producto-card">
+                <img src="imagenes/gato.jpg" alt="">
+                <h4>Piñata Cheshire</h4>
+                <p>$200 MXN</p>
+            </div>
 
-                <div class="producto-card">
-                    <img src="imagenes/planta.jpg" alt="">
-                    <h4>Piñata de Flor :)</h4>
-                    <p>$250 MXN</p>
-                </div>
+            <div class="producto-card">
+                <img src="imagenes/carton.jpg" alt="">
+                <h4>Piñata Clasica</h4>
+                <p>$190 MXN</p>
+            </div>
+
+            <div class="producto-card">
+                <img src="imagenes/planta.jpg" alt="">
+                <h4>Piñata de Flor :)</h4>
+                <p>$250 MXN</p>
+            </div>
 
         </div>
     </section>
+
 </main>
 
 <footer>
@@ -89,16 +95,17 @@
 
 </div>
 
+<!-- 🎵 MÚSICA -->
 <div class="musica-fija">
     <audio id="musica" controls>
         <source src="audio/lease.mp3" type="audio/mpeg">
     </audio>
 </div>
 
+<!-- SCRIPT MÚSICA -->
 <script>
 const musica = document.getElementById("musica");
 
-// Recuperar tiempo guardado
 window.addEventListener("load", () => {
     const tiempo = localStorage.getItem("tiempoMusica");
     if (tiempo) {
@@ -106,10 +113,17 @@ window.addEventListener("load", () => {
     }
 });
 
-// Guardar tiempo cuando cambias de página
 window.addEventListener("beforeunload", () => {
     localStorage.setItem("tiempoMusica", musica.currentTime);
 });
+</script>
+
+<!-- SCRIPT MENÚ -->
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("activo");
+}
 </script>
 
 </body>
