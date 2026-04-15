@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="estilos.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ RESPONSIVE -->
     <title>Artesanías Chamito</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
@@ -16,7 +16,10 @@
 </header>
 
 <nav>
-    <ul>
+    <!-- BOTÓN HAMBURGUESA -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="elaboracion.html">Elaboración</a></li>
@@ -26,7 +29,6 @@
 
 <main>
 
-    <!-- HERO -->
     <section class="hero">
         <h2>Artesanías únicas</h2>
         <p>Hechas con sangre, sudor y lágrimas :'v</p>
@@ -38,7 +40,6 @@
         </div>
     </section>
 
-    <!-- PRODUCTOS -->
     <section class="productos-destacados">
         <h3>PRODUCTOS DESTACADOS</h3>
 
@@ -67,7 +68,6 @@
 
 </main>
 
-<!-- ASIDE FUERA DE MAIN (como antes pero limpio) -->
 <aside>
     <h3>PROMOCIÓN</h3>
     <p>2 Velas por solo $200 MXN</p>
@@ -81,17 +81,17 @@
 
 </div>
 
-
+<!-- 🎵 MÚSICA -->
 <div class="musica-fija">
     <audio id="musica" controls>
         <source src="audio/lease.mp3" type="audio/mpeg">
     </audio>
 </div>
 
+<!-- SCRIPT MÚSICA -->
 <script>
 const musica = document.getElementById("musica");
 
-// Recuperar tiempo guardado
 window.addEventListener("load", () => {
     const tiempo = localStorage.getItem("tiempoMusica");
     if (tiempo) {
@@ -99,10 +99,17 @@ window.addEventListener("load", () => {
     }
 });
 
-// Guardar tiempo cuando cambias de página
 window.addEventListener("beforeunload", () => {
     localStorage.setItem("tiempoMusica", musica.currentTime);
 });
+</script>
+
+<!-- SCRIPT MENÚ -->
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("activo");
+}
 </script>
 
 </body>
