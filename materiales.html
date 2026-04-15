@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="estilos.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ -->
     <title>Materiales</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
@@ -15,7 +15,10 @@
 </header>
 
 <nav>
-    <ul>
+    <!-- 🍔 MENÚ HAMBURGUESA -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="elaboracion.html">Elaboración</a></li>
@@ -48,22 +51,75 @@
             <p>Textiles suaves y decorativos</p>
         </div>
 
-
         <div class="producto-card">
             <h4>Papel Crepe</h4>
             <p>Papel suave y flexible que permite crear volumen y textura</p>
         </div>
 
-
         <div class="producto-card">
             <h4>Botella</h4>
-            <p>Plastico Reutilizable y Duradero</p>
+            <p>Plástico reutilizable y duradero</p>
         </div>
-
 
         <div class="producto-card">
             <h4>Hilo o cuerda</h4>
             <p>Sirve para dar soporte y permitir que las piñatas se sostengan o cuelguen.</p>
+        </div>
+
+        <div class="producto-card">
+            <h4>Pegamento o silicón</h4>
+            <p>Permite fijar los materiales de forma firme, especialmente papel y cartón.</p>
+        </div>
+
+        <div class="producto-card">
+            <h4>Cartón</h4>
+            <p>Es ligero pero resistente, ideal para dar forma a las figuras sin que pesen mucho.</p>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 Artesanías Chamito</p>
+</footer>
+
+</div>
+
+<!-- 🎵 MÚSICA -->
+<div class="musica-fija">
+    <audio id="musica" controls>
+        <source src="audio/lease.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<!-- SCRIPT MÚSICA -->
+<script>
+const musica = document.getElementById("musica");
+
+window.addEventListener("load", () => {
+    const tiempo = localStorage.getItem("tiempoMusica");
+    if (tiempo) {
+        musica.currentTime = tiempo;
+    }
+});
+
+window.addEventListener("beforeunload", () => {
+    localStorage.setItem("tiempoMusica", musica.currentTime);
+});
+</script>
+
+<!-- SCRIPT MENÚ -->
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("activo");
+}
+</script>
+
+</body>
+</html>            <p>Sirve para dar soporte y permitir que las piñatas se sostengan o cuelguen.</p>
         </div>
 
         <div class="producto-card">
