@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="estilos.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ -->
     <title>Sobre Nosotros</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
@@ -15,7 +15,10 @@
 </header>
 
 <nav>
-    <ul>
+    <!-- 🍔 MENÚ HAMBURGUESA -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <ul id="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="productos.html">Productos</a></li>
         <li><a href="elaboracion.html">Elaboración</a></li>
@@ -79,18 +82,39 @@ con el objetivo de ofrecer productos únicos que conecten contigo.
 
 </div>
 
+<!-- 🎵 MÚSICA -->
 <div class="musica-fija">
     <audio id="musica" controls>
         <source src="audio/lease.mp3" type="audio/mpeg">
     </audio>
 </div>
 
+<!-- SCRIPT MÚSICA -->
 <script>
 const musica = document.getElementById("musica");
 
-// Recuperar tiempo guardado
 window.addEventListener("load", () => {
     const tiempo = localStorage.getItem("tiempoMusica");
+    if (tiempo) {
+        musica.currentTime = tiempo;
+    }
+});
+
+window.addEventListener("beforeunload", () => {
+    localStorage.setItem("tiempoMusica", musica.currentTime);
+});
+</script>
+
+<!-- SCRIPT MENÚ -->
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.classList.toggle("activo");
+}
+</script>
+
+</body>
+</html>    const tiempo = localStorage.getItem("tiempoMusica");
     if (tiempo) {
         musica.currentTime = tiempo;
     }
