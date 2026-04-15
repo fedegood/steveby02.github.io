@@ -114,17 +114,4 @@ function toggleMenu() {
 </script>
 
 </body>
-</html>    const tiempo = localStorage.getItem("tiempoMusica");
-    if (tiempo) {
-        musica.currentTime = tiempo;
-    }
-});
-
-// Guardar tiempo cuando cambias de página
-window.addEventListener("beforeunload", () => {
-    localStorage.setItem("tiempoMusica", musica.currentTime);
-});
-</script>
-
-</body>
 </html>
